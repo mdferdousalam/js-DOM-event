@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js DOM Events</title>
+  </head>
+  <body>
+    <h1>DOM special events</h1>
+    <h3>Ferdous</h3>
+    <button onclick="console.log(7)">click me</button>
+    <br />
+    <button onclick="document.body.style.backgroundColor='yellow'">
+      make yellow
+    </button>
+    <button onclick="makeRed()">make red</button>
+
+    <button id="make-blue">make blue</button>
+    <button id="make-pink">make pink</button>
+    <br />
+    <br />
+
+    <p id="input-display-text">default input text</p>
+
+    <input id="input-field" type="text" />
+    <button id="buttn-update">update</button>
+    <script src="js/event.js"></script>
+    <script>
+      document
+        .getElementById("buttn-update")
+        .addEventListener("click", function () {
+          console.log("update button clicked");
+          const inputField = document.getElementById("input-field");
+          const inputText = inputField.value;
+          const p = document.getElementById("input-display-text");
+          p.innerText = inputText;
+          inputField.value = "";
+        });
+    </script>
+  </body>
+</html>
